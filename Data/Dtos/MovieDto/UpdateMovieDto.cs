@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoviesAPI.Data.Dtos
 {
-  public class CreateMovieDto
+  public class UpdateMovieDto
   {
     [Required(ErrorMessage = "Title field is mandatory")]
     public string Title { get; set; }
@@ -19,5 +19,6 @@ namespace MoviesAPI.Data.Dtos
 
     [Range(1, 600, ErrorMessage = "Duration must be between 1 and 600 minutes")]
     public int Duration { get; set; }
+    public int AgeRestriction { get; set; }
   }
 }

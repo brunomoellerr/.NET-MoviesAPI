@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MoviesAPI.Models
@@ -22,6 +23,8 @@ namespace MoviesAPI.Models
 
     [Range(1, 600, ErrorMessage = "Duration must be between 1 and 600 minutes")]
     public int Duration { get; set; }
-
+    public int AgeRestriction { get; set; }
+    [JsonIgnore]
+    public virtual List<Session> Sessions { get; set; }
   }
 }
